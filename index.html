@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DNI Interactivo</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+        }
+        img {
+            width: 300px;
+            height: auto;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>DNI Digital</h2>
+        <img id="dniImg" src="frente.jpg" alt="DNI Frente" onclick="toggleImage()">
+    </div>
+
+    <script>
+        let isFront = true;
+        function toggleImage() {
+            let dniImg = document.getElementById("dniImg");
+            if (isFront) {
+                dniImg.src = "dorso.jpg";
+                dniImg.alt = "DNI Dorso";
+            } else {
+                dniImg.src = "frente.jpg";
+                dniImg.alt = "DNI Frente";
+            }
+            isFront = !isFront;
+        }
+    </script>
+</body>
+</html>
